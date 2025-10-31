@@ -12,9 +12,11 @@
       text-decoration: none;
       display: inline-block;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      position: absolute;
+      position: absolute;      /* This is required */
+      left: 100px;             /* Initial position */
+      top: 100px;              /* Initial position */
       cursor: pointer;
-      transition: left 0.1s ease, top 0.1s ease; /* Smooth and fast movement */
+      transition: left 0.1s ease, top 0.1s ease; /* Smooth and fast */
     }
   </style>
 </head>
