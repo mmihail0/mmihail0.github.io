@@ -12,20 +12,31 @@
       text-decoration: none;
       display: inline-block;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      position: absolute; /* Needed for moving around */
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .green-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+      transition: all 0.2s;
     }
   </style>
 </head>
 <body>
   <p>This is the game of life</p>
-  <a href="https://www.youtube.com/watch?v=a7OzklvX9ic" class="green-button">
+  <a href="https://www.youtube.com/watch?v=a7OzklvX9ic" class="green-button" id="runawayBtn">
     Micro transactions here 💵🤑💸💳💳
   </a>
+
+  <script>
+    const btn = document.getElementById("runawayBtn");
+
+    btn.addEventListener("mouseenter", () => {
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      btn.style.left = randomX + "px";
+      btn.style.top = randomY + "px";
+    });
+  </script>
 </body>
 </html>
